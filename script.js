@@ -18,7 +18,13 @@ function getChannelStatus(channelName) {
 
 function createChannelBlock(channelName, onlineStatus) {
   $.getJSON('https://wind-bow.gomix.me/twitch-api/channels/'+channelName+'?callback=?', function(data) {
-    var html = '<div class="streamer container">';
+    var html = '<div class="streamer container ';
+    if (onlineStatus === true) {
+      html += 'online';
+    } else {
+      html += 'offline';
+    }
+    html += '">';
     html += '<img src="' + data.logo + '" ';
     html += 'alt="' + data.name + '" class="inline"\/>';
     html += '<a href="' + data.url + '" class="channel-name inline" target="_blank">';
@@ -34,3 +40,16 @@ function createChannelBlock(channelName, onlineStatus) {
     $(".overall").append(html);
   });
 }
+
+$("#all-button").on("click", function() {
+  $(".online").show();
+  $(".offline").show();
+});
+$("#online-button").on("click", function() {
+  $(".online").show();
+  $(".offline").hide();
+});
+$("#offline-button").on("click", function() {
+  $(".online").hide();
+  $(".offline").show();
+});
