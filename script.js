@@ -4,6 +4,19 @@ $(document).ready(function() {
   for (i=0; i<streamerList.length; i++) { 
     getChannelStatus(streamerList[i]);
   }
+  $("#all-button").on("click", function() {
+    $(".online").show();
+    $(".offline").show();
+  });
+  $("#online-button").on("click", function() {
+    $(".online").show();
+    $(".offline").hide();
+  });
+  $("#offline-button").on("click", function() {
+    $(".online").hide();
+    $(".offline").show();
+  });
+
 });
 
 function getChannelStatus(channelName) {
@@ -41,15 +54,3 @@ function createChannelBlock(channelName, onlineStatus) {
   });
 }
 
-$("#all-button").on("click", function() {
-  $(".online").show();
-  $(".offline").show();
-});
-$("#online-button").on("click", function() {
-  $(".online").show();
-  $(".offline").hide();
-});
-$("#offline-button").on("click", function() {
-  $(".online").hide();
-  $(".offline").show();
-});
