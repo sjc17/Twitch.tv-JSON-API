@@ -1,0 +1,38 @@
+img {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-style: solid;
+  border-radius: 100%;
+  margin: 5px;
+}
+
+.container {
+  margin: auto;
+  background-color: LightBlue;
+  width: 1000px;
+  border: 3px red;
+}
+
+.streamer {  
+  display: inline-block;
+  background-color: LightGrey;
+  border: 3px solid;
+}
+
+.channel-name {
+  vertical-align: middle;
+  /*border: 3px solid #73AD21; */
+}
+
+.channel-info {
+  text-align: center;
+}
+
+.inline {
+  display: inline-block;
+}
+
+h1 {
+  text-align: center;
+}
